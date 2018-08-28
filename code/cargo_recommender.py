@@ -27,6 +27,7 @@ def get_user_item_matrix(df):
     return user_items
 
 def _get_od_pairs(df):
+    df = df.copy()
     df.dropna(subset=['orgcity','destcity'],inplace=True)
     df['item'] = list(zip(df.orgcity,df.destcity))
     return df
